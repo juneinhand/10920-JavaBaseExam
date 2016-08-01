@@ -57,7 +57,7 @@ public class App {
 			}
 			dayCount += days;
 		}
-		System.out.println(year + "年" + month + "月" + day + "日是这一年的第"
+		System.out.println("你输入的日期为当年的第"
 				+ (dayCount + day) + "天。");
 	}
 

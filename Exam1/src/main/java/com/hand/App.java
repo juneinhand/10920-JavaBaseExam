@@ -1,8 +1,6 @@
 package com.hand;
 
-import java.util.Vector;
 
-import java.math.*;
 import java.util.*;
 
 /**
@@ -13,11 +11,12 @@ public class App {
 	public static void main(String[] args) {
 
 		int x = 0;
-		Vector v = new Vector();
+
+		List<Integer> list = new ArrayList<Integer>();
 		for (int i = 101; i <= 200; i++) {
 			boolean b = true;
-			double m = Math.sqrt(i);
-			for (int j = 2; j < Math.sqrt(i); j++) {
+
+			for (int j = 2; j < i - 1; j++) {
 				if (i % j == 0) {
 					b = false;
 					break;
@@ -25,11 +24,18 @@ public class App {
 			}
 			if (b == true) {
 				x++;
-				v.add(i);
+				list.add(i);
 			}
 		}
 		System.out.print("101到200中间有 " + x + "个素数，");
-		System.out.println("分别是:" + v);
-
+		System.out.print("分别是:");
+		int count = 0;
+		for (Integer s : list) {
+			count++;
+			if (count != x)
+				System.out.print(s + ",");
+			else
+				System.out.print(s);
+		}
 	}
 }
